@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+</head>
+<body>
+    <button id="changeColorButton">Change Color</button>
+    <input type="text" disabled id="hexcode">
+    <script>
+        function getRandomColor() {
+            // Generate a random hex color
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) { // gives 6chars 
+                color = color + letters[Math.floor(Math.random() *16)];
+            }
+            return color;
+        }   
+            let hexcode=document.getElementById("hexcode")
+            let colorchange=document.getElementById("changeColorButton")
+            colorchange.addEventListener('click', ()=>
+            {
+            document.body.style.backgroundColor = getRandomColor();
+            hexcode.value=getRandomColor();
+        });
+        // console.log(Math.getRandomColor());
+    </script>
+</body>
+</html>
